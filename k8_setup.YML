@@ -1,0 +1,41 @@
+- name: Import and Install K8s (Minikube)
+  hosts: localhost
+  user: ubuntu
+  become: yes
+
+  tasks:
+  - name: Check packages for updates
+    apt:
+      update_cache: yes 
+  
+  - name: Install apt-transport-https
+    apt:
+	  name: apt-transport-https
+
+  - name: Add Google key
+    shell: 
+      cmd: curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+	  
+  - name: Install K8 depo
+    shell: 
+      cmd: echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+	  
+  - name: Install Kubectl
+    apt:
+      name: kubectl
+	  
+  - name: Get Minikube
+    shell:
+      cmd: curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+	  
+  - name: Sort executable permissions on Minikube
+    shell:
+      cmd: chmod +x minikube
+	  
+  - name: Move Minikube to where it wants to live
+    shell: 
+      cmd: mv minikube /usr/local/bin/
+	  
+  - name: Drop SuperUser and start running Minikube
+    become_user: ubuntu
+    command: minikube start
