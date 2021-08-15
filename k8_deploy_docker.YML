@@ -1,0 +1,9 @@
+- name: Deploy Docker image to K8
+  hosts: localhost
+  user: ubuntu
+  become: yes
+
+  tasks:
+    - name: Create deployment to Kubernetes
+      shell: 
+        cmd: kubectl create deployment dm_devops_cw2_r --image=danielmckain/dm_devops_cw2_r:1.0
