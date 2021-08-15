@@ -1,0 +1,9 @@
+- name: Create K8 service for thingy
+  hosts: localhost
+  user: ubuntu
+
+
+  tasks:
+    - name: Create K8 Service
+      shell: 
+        cmd: kubectl expose deployment/devopscw2 --type="NodePort" --port 8080 --name node-port-service
