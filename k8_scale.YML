@@ -1,0 +1,9 @@
+- name: Scale k8 service up to 4 nodes
+  hosts: localhost
+  user: ubuntu
+
+
+  tasks:
+    - name: Scale k8 Service
+      shell: 
+        cmd: kubectl scale deployments/devopscw2 --replicas=4
