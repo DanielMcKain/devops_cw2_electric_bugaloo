@@ -38,5 +38,6 @@
       cmd: mv minikube /usr/local/bin/
 
   - name: Drop SuperUser and start running Minikube
+    become_user: ubuntu
     shell: 
       cmd: minikube start
