@@ -6,4 +6,4 @@
   tasks:
     - name: Create deployment to Kubernetes
       shell: 
-        cmd: kubectl create deployment dm_devops_cw2_r --image=danielmckain/dm_devops_cw2_r:1.0
+        cmd: kubectl create deployment devopscw2 --image=danielmckain/dm_devops_cw2_r:1.0
