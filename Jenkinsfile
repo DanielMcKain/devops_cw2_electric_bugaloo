@@ -11,7 +11,7 @@ pipeline
       {
         script
         { 
-          //Your code goes here
+          app = docker.build("danielmckain/dm_devops_cw2_r")
 
 
 
@@ -25,7 +25,9 @@ pipeline
       {
         script
         {
-          //Your code goes here
+          docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
+            app.push("${env.BUILD_NUMBER}")
+            app.push("latest")
 
 
 
