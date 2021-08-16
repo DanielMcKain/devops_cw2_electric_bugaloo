@@ -1,6 +1,5 @@
 pipeline {
   agent any
-
   stages {
     stage('Building image'){
       steps{
@@ -9,7 +8,6 @@ pipeline {
         }
       }
     }
-
     stage('Pushing Image'){
       steps{
         script{
@@ -20,14 +18,5 @@ pipeline {
         }
       }
     }
-
-    //stage('Roll Update'){
-      //steps{
-          //Your code goes here
-
-      //}
-    //}
-
   }
-
 }
