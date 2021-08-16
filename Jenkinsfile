@@ -22,8 +22,7 @@ pipeline {
       steps{
         script{
           // THIS IS A COMMENT sh "ansible-playbook k8_deploy_docker.YML"
-          sh "pwd && ssh ubuntu@172.31.32.72 && pwd"
-		  
+          sh "ssh ubuntu@3.89.48.86 date"
           }
         }
       }
