@@ -18,5 +18,13 @@ pipeline {
         }
       }
     }
+    stage('Create K8 Deployment'){
+      steps{
+        script{
+          sh "ansible-playbook k8_deploy_docker.YML"
+          }
+        }
+      }
+    }
   }
 }
