@@ -22,7 +22,7 @@ pipeline {
       steps{
         script{
           // THIS IS A COMMENT sh "ansible-playbook k8_deploy_docker.YML"
-          sh "ssh -i \"DevOps_Cw2_R.pem\" ubuntu@3.89.48.86"
+          sh "ssh -i \"/home/devops_cw2_electric_bugaloo/DevOps_Cw2_R.pem\" ubuntu@3.89.48.86"
           }
         }
       }
