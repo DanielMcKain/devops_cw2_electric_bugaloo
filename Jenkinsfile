@@ -21,11 +21,12 @@ pipeline {
       }
     }
 
-    stage('Roll Update'){
-      steps{
+    //stage('Roll Update'){
+      //steps{
           //Your code goes here
-      }
-    }
+
+      //}
+    //}
 
   }
 
