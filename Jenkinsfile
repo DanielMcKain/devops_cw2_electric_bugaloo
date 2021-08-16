@@ -21,7 +21,9 @@ pipeline {
     stage('Create K8 Deployment'){
       steps{
         script{
-          sh "ansible-playbook k8_deploy_docker.YML"
+          // THIS IS A COMMENT sh "ansible-playbook k8_deploy_docker.YML"
+          sh "pwd && ssh ubuntu@172.31.32.72 && pwd"
+		  
           }
         }
       }
