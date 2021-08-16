@@ -4,7 +4,7 @@ pipeline {
     stage('Building image'){
       steps{
         script{
-          app = docker.build("danielmckain/dm_devops_cw2_r")
+          app = docker.build("danielmckain/dm_devops_cw2_r:1.0")
         }
       }
     }
