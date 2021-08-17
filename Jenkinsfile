@@ -18,11 +18,20 @@ pipeline {
         }
       }
     }
-    stage('Create K8 Deployment'){
+    stage('Create K8 Deployment from Dockerfile'){
       steps{
         script{
           // THIS IS A COMMENT sh "ansible-playbook k8_deploy_docker.YML"
           sh "ssh -i \"/home/devops_cw2_electric_bugaloo/DevOps_Cw2_R.pem\" ubuntu@34.238.148.77 'ansible-playbook /home/ubuntu/devops_cw2_electric_bugaloo/k8_deploy_docker.YML'"
+          }
+        }
+      }
+    }
+    stage('Scale Deployment'){
+      steps{
+        script{
+          // THIS IS A COMMENT sh "ansible-playbook k8_deploy_docker.YML"
+          sh "ssh -i \"/home/devops_cw2_electric_bugaloo/DevOps_Cw2_R.pem\" ubuntu@34.238.148.77 'ansible-playbook /home/ubuntu/devops_cw2_electric_bugaloo/k8_scale.YML'"
           }
         }
       }
