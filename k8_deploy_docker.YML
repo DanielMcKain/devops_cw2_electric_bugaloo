@@ -4,6 +4,10 @@
 
 
   tasks:
+     - name: Clear previous deployment
+      shell: 
+        cmd: kubectl delete deployment devopscw2 
+
     - name: Create deployment to Kubernetes
       shell: 
         cmd: kubectl create deployment devopscw2 --image=danielmckain/dm_devops_cw2_r:latest
