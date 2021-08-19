@@ -22,10 +22,10 @@ pipeline {
       steps{
         script{
           // THIS IS A COMMENT sh "ansible-playbook k8_deploy_docker.YML"
-          sh "ssh -i \"/home/devops_cw2_electric_bugaloo/DevOps_Cw2.pem\" ubuntu@3.86.17.86 'ansible-playbook /home/ubuntu/devops_cw2_electric_bugaloo/k8_deploy_docker.YML'"
+          sh "ssh -i \"/home/devops_cw2_electric_bugaloo/DevOps_Cw2.pem\" ubuntu@54.82.135.136 'ansible-playbook /home/ubuntu/devops_cw2_electric_bugaloo/k8_deploy_docker.YML'"
           }
         script{
-          sh "ssh -i \"/home/devops_cw2_electric_bugaloo/DevOps_Cw2.pem\" ubuntu@3.86.17.86 'ansible-playbook /home/ubuntu/devops_cw2_electric_bugaloo/k8_scale.YML'"
+          sh "ssh -i \"/home/devops_cw2_electric_bugaloo/DevOps_Cw2.pem\" ubuntu@54.82.135.136 'ansible-playbook /home/ubuntu/devops_cw2_electric_bugaloo/k8_scale.YML'"
           }
         }
       }
