@@ -4,7 +4,7 @@
 
 
   tasks:
-     - name: Clear previous deployment
+    - name: Clear previous deployment
       shell: 
         cmd: kubectl delete deployment devopscw2 
 
